@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+	Interphase by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>How It Works</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="index.html">Mytinerary</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="how_it_works.html">How It Works</a></li>
+						<li><a href="theteam.html">Our Team</a></li>
+						<li><a href="demos.html">Demos</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major">
+						<h2>How It Works</h2>
+						<p><b>Imagine you’re traveling to a new city...</b></br>
+							How do you find the most interesting attractions
+							and plan a day of exploring?</p>
+					</header>
+
+					<!-- Text -->
+						<section>
+							<h3><b>Project Overview</b></h3>
+							<p>Our project was a Django web application, utilizing an Apache server and PostgreSQL for database management. Our end-goal was to create a fast, personalized, and interactive itinerary builder for walking tours of cities. Furthermore, we used several APIs, including (but not limited to) Yelp, Wikipedia, Google Maps/Search, Twilio, and Bitly for our data.<br><br>To speed up the user experience, we used a database to store information from pre-selected cities, thereby eliminating the need for several API calls while the app is running. In each of these cities we ranked places of interest (POIs) as decided by Yelp based on a popularity formula provided by the paper we loosely based our project on. Our algorithm selects nearby POIs based on a calculated score that factors in distance, user preference, and popularity score (using Yelp ratings). Then, it creates a path that minimizes the distance between points while maximizing the score of the POIs on the route. This algorithm returns up to 8 POIs in traversal order that we send to the Google Maps API to get a map of the route.</p>
+
+							<hr />
+
+							<header>
+								<h3><b>Literary Research</b></h3>
+								<p><a href="http://dl.acm.org/citation.cfm?id=2701366&CFID=786697555&CFTOKEN=45730554"><i>“Aurigo: An Interactive Tour Planner for Personalized Itineraries”</i></a></p>
+							</header>
+							<p>We based our project on a paper presented at the Intelligent User Interfaces conference in 2015, <i>“Aurigo: An Interactive Tour Planner for Personalized Itineraries.”</i> Like the original paper, we tackled two main problems, the first being the efficient itinerary problem (how to pick the best possible points of interest for a visitor to pass through on a walking tour from one point to another), and the second being the assisted exploration problem (how to design an effective user interface for a user to customize their own itinerary). Our approach was similar to the paper's, making use of the same general algorithms for selecting points of interests, and basing our own interface design off of Aurigo. However, we did make small adjustments and deviations in design and algorithm implementation. <br><br>
+							In particular, we changed the following aspects of their paper to better match what we wanted for our project:
+							<h4><b>Front-End</b></h4>
+								<ul>
+									<li>Utilized sliders instead of buttons for the user input page.</li>
+									<li>Allowed for expandable pop radius.</li>
+									<li>Allowed for reordering of route through side panel.</li>
+									<li>Changed interface for POI markers and info windows.</li>
+									<li>Added "send-directions-to-phone" capabilities.</li>
+								</ul>
+								<h4><b>Back-End</b></h4>
+									<ul>
+										<li>Weighted and normalized preferences used in algorithm.</li>
+										<li>Changed how distance was calculated. Namely, rather than just using Euclidean distance, we used the distance of a POI to an endpoint if a POI did not orthogonally intersect with a segment.</li>
+									</ul>
+							</p>
+							<hr />
+
+							<h3><b>The Algorithm</b></h3>
+
+							<hr />
+
+							<h4>Steps</h4>
+							<ol>
+								<li>Draw a line between start and end point creating path of one segment</li>
+								<li>For each segment in route:
+									<ul style="margin: 0 0 0 0;">
+										<li>Loop through each POI in the city</li>
+										<li>Find POI with best overall score</li>
+									</ul>
+								</li>
+								<li>Add POI with best score to the route, creating an additional segment</li>
+								<li>Repeat 1 - 3 until path has chosen number of POIs as selected by user
+								</li>
+							</ol>
+							<h3><b>User Studies</b></h3>
+							<p>We also conducted a user study to test our application's usability and made changes accordingly to help make our application intuitive and easy to learn. The changes we made include the following:
+								<ul>
+									<li>Enhanced sidebar interactions</li>
+									<li>Populated database with more POIs</li>
+									<li>Improved discoverability of features</li>
+								</ul>
+							</p>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="copyright">
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+					</ul>
+				</div>
+			</footer>
+
+	</body>
+</html>
