@@ -32,8 +32,8 @@
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="how_it_works.html">How It Works</a></li>
-						<li><a href="elements.html">Our Team</a></li>
-						<li><a href="elements.html">Demos</a></li>
+						<li><a href="theteam.html">Our Team</a></li>
+						<li><a href="demos.html">Demos</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -52,23 +52,15 @@
 					<!-- Text -->
 						<section>
 							<h3><b>Project Overview</b></h3>
-							<p>Our project was a Django web application, utilizing an Apache server and PostgreSQL for database management. Our end-goal was to create a fast, personalized, and interactive itinerary builder for walking tours of cities. Furthermore, we used several APIs, including (but not limited to) Yelp, Wikipedia, Google Maps/Search, Twilio, and Bitly for our data.<br><br>
-							To speed up the user experience, we used a database to store information from pre-selected cities, thereby eliminating the need for several API calls while the app is running. In each of these cities we ranked places of interest (POIs) as decided by Yelp
-							based on a popularity formula provided by the paper we loosely based our project on.
-							Our algorithm selects nearby POIs based on a calculated score that
-							factors in distance, user preference, and popularity score (using Yelp ratings).
-							Then, it creates a path that minimizes the distance between
-							points while maximizing the score of the POIs on the route.
-							This algorithm returns up to 8 POIs in traversal order that we send to the Google Maps API
-							to get a map of the route.</p>
+							<p>Our project was a Django web application, utilizing an Apache server and PostgreSQL for database management. Our end-goal was to create a fast, personalized, and interactive itinerary builder for walking tours of cities. Furthermore, we used several APIs, including (but not limited to) Yelp, Wikipedia, Google Maps/Search, Twilio, and Bitly for our data.<br><br>To speed up the user experience, we used a database to store information from pre-selected cities, thereby eliminating the need for several API calls while the app is running. In each of these cities we ranked places of interest (POIs) as decided by Yelp based on a popularity formula provided by the paper we loosely based our project on. Our algorithm selects nearby POIs based on a calculated score that factors in distance, user preference, and popularity score (using Yelp ratings). Then, it creates a path that minimizes the distance between points while maximizing the score of the POIs on the route. This algorithm returns up to 8 POIs in traversal order that we send to the Google Maps API to get a map of the route.</p>
 
 							<hr />
 
 							<header>
 								<h3><b>Literary Research</b></h3>
-								<p><i>“Aurigo: An Interactive Tour Planner for Personalized Itineraries”</i></p>
+								<p><a href="http://dl.acm.org/citation.cfm?id=2701366&CFID=786697555&CFTOKEN=45730554"><i>“Aurigo: An Interactive Tour Planner for Personalized Itineraries”</i></a></p>
 							</header>
-							<p>We based our project on a paper presented at the Intelligent User Interfaces conference in 2015, “Aurigo: An Interactive Tour Planner for Personalized Itineraries.” Like the original paper, we tackled two main problems, the first being the efficient itinerary problem (how to pick the best possible points of interest for a visitor to pass through on a walking tour from one point to another), and the second being the assisted exploration problem (how to design an effective user interface for a user to customize their own itinerary). Our approach was similar to the paper's, making use of the same general algorithms for selecting points of interests, and basing our own interface design off of Aurigo. However, we did make small adjustments and deviations in design and algorithm implementation. <br><br>
+							<p>We based our project on a paper presented at the Intelligent User Interfaces conference in 2015, <i>“Aurigo: An Interactive Tour Planner for Personalized Itineraries.”</i> Like the original paper, we tackled two main problems, the first being the efficient itinerary problem (how to pick the best possible points of interest for a visitor to pass through on a walking tour from one point to another), and the second being the assisted exploration problem (how to design an effective user interface for a user to customize their own itinerary). Our approach was similar to the paper's, making use of the same general algorithms for selecting points of interests, and basing our own interface design off of Aurigo. However, we did make small adjustments and deviations in design and algorithm implementation. <br><br>
 							In particular, we changed the following aspects of their paper to better match what we wanted for our project:
 							<h4><b>Front-End</b></h4>
 								<ul>
